@@ -8,5 +8,5 @@
 <!--  -->
 
 @if (countryResource.hasValue()) {
-<app-country-information />
+<app-country-information [country]="countryResource.value()" />
 }

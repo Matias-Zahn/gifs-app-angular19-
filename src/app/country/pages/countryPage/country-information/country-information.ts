@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Country } from '../../../interfaces/Country.interfaces';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-country-information',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './country-information.html',
 })
-export class CountryInformation {}
+export class CountryInformation {
+
+  country = input.required<Country>();
+
+
+}

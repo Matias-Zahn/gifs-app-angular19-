@@ -8,8 +8,11 @@ export class CountryMapper {
       capital: item.capital.join(', '),
       flag: item.flag,
       flagSvg: item.flags.svg,
+      nameOfficial: item.name.official,
       name: item.translations['spa'].common ?? 'No spanish name',
       population: item.population,
+      region: item.region,
+      subregion: item.subregion
     };
   }
 
