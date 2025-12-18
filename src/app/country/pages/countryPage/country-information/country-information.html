@@ -1,15 +1,13 @@
 <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
-    <img
-      [src]="country().flagSvg"
-      alt="Shoes" />
+    <img [src]="country().flagSvg" alt="Shoes" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title"> {{country().nameOfficial}} | {{country().name}}</h2>
-    <p>{{country().population | number}} habitantes</p>
-    <p>Capital: {{country().capital}}</p>
-    <p>Region: {{country().region}}</p>
-    <p>Sub-region: {{country().subregion}}</p>
+    <h2 class="card-title">{{ country().nameOfficial }} | {{ country().name }}</h2>
+    <p>{{ country().population | number }} habitantes</p>
+    <p>Capital: {{ country().capital }}</p>
+    <p>Region: {{ country().region }} {{ country().cca2 }}</p>
+    <p>Sub-region: {{ country().subregion }}</p>
     <div class="card-actions justify-end">
       <button class="btn btn-primary">Buy Now</button>
     </div>

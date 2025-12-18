@@ -1,1 +1,26 @@
-<app-country-list [countries]="[]" />
+@for (region of regions; track region) {
+
+<button
+  [class.btn-primary]="buttomRegion() === region"
+  (click)="buttomRegion.set(region)"
+  class="btn btn-outline mx-1"
+>
+  {{ region }}
+</button>
+}
+<!--  -->
+
+@if (countryResource.isLoading()) {
+<app-loader />
+}
+<!--  -->
+
+@if (countryResource.error()) {
+<app-not-found />
+}
+
+<!--  -->
+
+@if (countryResource.hasValue()) {
+<app-country-list [countries]="countryResource.value()" />
+}
