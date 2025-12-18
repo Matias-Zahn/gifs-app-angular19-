@@ -1,2 +1,8 @@
-<app-country-search-input  placeHolder="Buscar por pais"/>
-<app-country-list />
+<app-country-search-input placeHolder="Buscar por pais" (value)="query.set($event)" />
+
+<app-country-list
+  [countries]="countryResources.value() ?? []"
+  [errorMesagge]="countryResources.error()"
+  [isEmpty]="countryResources.value()?.length === 0"
+  [isLoading]="countryResources.isLoading()"
+/>

@@ -1,2 +1,8 @@
-<app-country-search-input (value)="recibirValor($event)" placeHolder="Buscar por capital"/>
-<app-country-list />
+<app-country-search-input (value)="query.set($event)" placeHolder="Buscar por capital" />
+
+<app-country-list
+  [countries]="countryResoruce.value() ?? []"
+  [errorMesagge]="countryResoruce.error()"
+  [isEmpty]="countryResoruce.value()?.length === 0"
+  [isLoading]="countryResoruce.isLoading()"
+/>
